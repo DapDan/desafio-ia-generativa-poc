@@ -1,0 +1,34 @@
+[
+  {
+    "caso": "cnh",
+    "arquivo": "cnh_exemplo.jpeg",
+    "tempo_segundos": 0.555,
+    "n_caracteres_extraidos": 11,
+    "n_paginas": 1,
+    "amostra_texto": "E 000000000"
+  },
+  {
+    "caso": "fatura",
+    "arquivo": "fatura_energia.jpg",
+    "tempo_segundos": 3.087,
+    "n_caracteres_extraidos": 1777,
+    "n_paginas": 1,
+    "amostra_texto": "Grupo Neenergia\n\nn celpe\n\nDADOS DO CLIENTE\nMARIA JOSÉ DA SILVA\n\ncpr: 123458 78940\n\nCLASSIFICAÇÃO\n\nBI RESIDENCIAL\nRESIDENCIAL\n\nMonotásico\n\nNDANOTAFISCAL | SERIE\nconoogas ÚNICA\nAPRESENTAÇÃO | Nº DO cuENTE\n\nConsumo ato gut\n\nTarifa Social de Energia Elétrica: Criada pela Lei 10,438, de 26/04/02.\nNOTA FISCAL + FATURA = CONTA DE ENERGIA ELÉTRICA\n\nCompanhia Energélica de Perempuco.\n\nAy, João de Batos 11, Boa Vista Recle, Pemêmibuco - CEP 50050-602\n\nCNPJ 10.835 98\n\n43-93 | vm ele com be\n\nENDEREÇO DA UNIDADE CONSUMIDORA\nRUA JOÃO FERNANDES VIEIRA 175\n\nBOAVISTA.\n\nsosso-150\n\nconta contrato\n\n1234567890\n\n) "
+  },
+  {
+    "caso": "documento_extenso_pg8_tabela",
+    "arquivo": "claude3_model_family.pdf (pg. 8)",
+    "tempo_segundos": 1.916,
+    "n_caracteres_extraidos": 1131,
+    "n_paginas": 1,
+    "amostra_texto": "Gemini_ Ge\n\nClaude 3 Claude 3 Claude 3 7\n\nOpus Sonnet Haiku GPa 1.5 Prél 1.0 Pr\n+ Art & Design 615% 61.7% 60.8% 65.8% 10.0% — —\n—+ Business 612% 58.2% 52.5% 59.3% 56.1% — —\n— Science 48.9% 371% 37.1% 54.7% 48.0% — —\n—+ Health & Medicine 611% = STI% = 52.3% 64.7% 67.3% — —\n—+ Humanities & Social Science 70.0% 68.7% 66.0% 72.5% 78.3% — —\n—+ Technology & Engineering 50.6% 45.0% 41.5% 36.7% 47.1% — —\nOverall 59.4% 53.1% 50.2% 56.8% (from 59.4% = 58.5% «47.9%\nDocVQA [53] (test, ANLS score) 89.3% 89.5% 88.8% 88.4% 90.9% 86.5% 88.1%\n\nDocument understanding\n\nMathVista (54) (testmi\n\n: 50.5%! 47.9%! 46."
+  },
+  {
+    "caso": "documento_extenso_pg9_grafico",
+    "arquivo": "claude3_model_family.pdf (pg. 9)",
+    "tempo_segundos": 2.731,
+    "n_caracteres_extraidos": 1226,
+    "n_paginas": 1,
+    "amostra_texto": "Human\n\nWhat is the average %\ndifference between young\nadults and elders for G7\nnations? Think step by step.\n\nClaude 3 Opus\n\nTo calculate the average difference in percentage\nbetween the 18-39 and 40+ age groups for G7\ncountries:\n\n1. Identify the G7 countries in the data: Canada,\nFrance, Germany, Italy, Japan, UK, USA\n\n2. For each G7 country, subtract the 40+ percentage\nfrom the 18-39 percentage:\n\nCanada: 100% - 92% = 8%\nFrance: 99% - 89% = 10%\nGermany: 100% - 89% = 11%\nItaly: 100% - 90% = 10%\nJapan: 99% - 84% = 15%\nUK: 100% - 88% = 12%\n\nUSA: 98% - 94% = 4%\n\n3. Add up those differences:\n8% + 10"
+  }
+]

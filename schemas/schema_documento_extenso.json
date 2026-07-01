@@ -1,0 +1,42 @@
+{
+  "name": "extrair_conteudo_documento_extenso",
+  "description": "Converte paginas de um documento extenso (relatorio tecnico/paper) em blocos de conteudo estruturado, preservando a ordem de leitura, a estrutura de tabelas e descrevendo graficos/imagens nao textuais.",
+  "input_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "pagina": {
+        "type": "integer",
+        "description": "Numero da pagina do documento original."
+      },
+      "blocos": {
+        "type": "array",
+        "description": "Blocos de conteudo da pagina, na ordem de leitura correta (respeitando colunas/layout).",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tipo": {
+              "type": "string",
+              "enum": ["titulo", "paragrafo", "tabela", "figura_ou_grafico", "legenda"]
+            },
+            "texto": {
+              "type": "string",
+              "description": "Usado quando tipo = titulo, paragrafo ou legenda. Texto corrido do bloco."
+            },
+            "tabela_markdown": {
+              "type": "string",
+              "description": "Usado quando tipo = tabela. Tabela representada em Markdown (com | e ---), preservando linhas/colunas/cabecalhos originais."
+            },
+            "descricao_figura": {
+              "type": "string",
+              "description": "Usado quando tipo = figura_ou_grafico. Descricao interpretativa do conteudo visual: o que o grafico/imagem mostra, eixos, tendencias e principais valores/insights - nao apenas 'imagem presente'."
+            }
+          },
+          "required": ["tipo"]
+        }
+      }
+    },
+    "required": ["pagina", "blocos"]
+  }
+}

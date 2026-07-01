@@ -1,0 +1,69 @@
+{
+  "name": "extrair_dados_fatura_energia",
+  "description": "Extrai os dados estruturados de uma fatura/conta de energia eletrica brasileira, preservando a organizacao das secoes do documento.",
+  "input_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "cliente": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "nome": {"type": "string"},
+          "cpf_cnpj": {"type": "string"},
+          "endereco_unidade_consumidora": {"type": "string"}
+        },
+        "required": ["nome", "cpf_cnpj", "endereco_unidade_consumidora"]
+      },
+      "conta_contrato": {"type": "string"},
+      "mes_ano_referencia": {"type": "string"},
+      "data_vencimento": {"type": "string", "description": "Formato DD/MM/AAAA"},
+      "total_a_pagar_reais": {
+        "type": "number",
+        "description": "Valor total a pagar em Reais, apenas o numero (ex: 63.72)."
+      },
+      "consumo_kwh": {
+        "type": "number",
+        "description": "Consumo ativo do periodo em kWh."
+      },
+      "historico_consumo_mensal": {
+        "type": "array",
+        "description": "Serie historica de consumo mensal em kWh, na ordem em que aparece no grafico/tabela do documento (mes mais antigo primeiro).",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mes": {"type": "string"},
+            "consumo_kwh": {"type": "number"}
+          },
+          "required": ["mes", "consumo_kwh"]
+        }
+      },
+      "tributos": {
+        "type": "array",
+        "description": "Tributos incidentes com base de calculo e aliquota.",
+        "items": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "tributo": {"type": "string"},
+            "base_calculo_reais": {"type": "number"},
+            "aliquota_percentual": {"type": "number"},
+            "valor_reais": {"type": "number"}
+          },
+          "required": ["tributo", "base_calculo_reais", "aliquota_percentual", "valor_reais"]
+        }
+      }
+    },
+    "required": [
+      "cliente",
+      "conta_contrato",
+      "mes_ano_referencia",
+      "data_vencimento",
+      "total_a_pagar_reais",
+      "consumo_kwh",
+      "historico_consumo_mensal",
+      "tributos"
+    ]
+  }
+}

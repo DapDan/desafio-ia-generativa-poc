@@ -1,0 +1,14 @@
+# Tecnica A (recomendada) - requer ANTHROPIC_API_KEY no ambiente
+anthropic>=0.115.0
+
+# Baseline local (OCR classico) - roda sem nenhuma chave de API
+pytesseract>=0.3.10
+pdf2image>=1.17.0
+pillow>=10.0.0
+pypdf>=4.0.0
+
+# Notebook
+jupyter>=1.0.0
+nbformat>=5.10.0
+nbconvert>=7.16.0
+ipykernel>=6.29.0

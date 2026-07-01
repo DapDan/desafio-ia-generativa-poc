@@ -1,0 +1,48 @@
+{
+  "name": "extrair_dados_cnh",
+  "description": "Extrai os campos estruturados de uma Carteira Nacional de Habilitacao (CNH) brasileira.",
+  "input_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "nome": {
+        "type": "string",
+        "description": "Nome completo do portador, exatamente como impresso no documento."
+      },
+      "cpf": {
+        "type": "string",
+        "description": "CPF do portador no formato XXX.XXX.XXX-XX."
+      },
+      "data_nascimento": {
+        "type": "string",
+        "description": "Data de nascimento no formato DD/MM/AAAA."
+      },
+      "data_emissao": {
+        "type": "string",
+        "description": "Data de emissao do documento (campo 'DT EMISSAO ...') no formato DD/MM/AAAA."
+      },
+      "filiacao_pai": {
+        "type": "string",
+        "description": "Nome do pai, conforme campo de filiacao."
+      },
+      "filiacao_mae": {
+        "type": "string",
+        "description": "Nome da mae, conforme campo de filiacao."
+      },
+      "confianca_extracao": {
+        "type": "string",
+        "enum": ["alta", "media", "baixa"],
+        "description": "Autoavaliacao do modelo sobre a legibilidade/confianca da extracao."
+      }
+    },
+    "required": [
+      "nome",
+      "cpf",
+      "data_nascimento",
+      "data_emissao",
+      "filiacao_pai",
+      "filiacao_mae",
+      "confianca_extracao"
+    ]
+  }
+}
