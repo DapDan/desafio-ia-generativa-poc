@@ -88,17 +88,6 @@ jupyter notebook POC.ipynb
 | 2 | `samples/claude3_model_family.pdf` | `schemas/schema_documento_extenso.json` | Preservar layout de tabelas + interpretar gráficos |
 | 3 | `samples/fatura_energia.jpg` | `schemas/schema_fatura.json` | Extrair fatura preservando organização das seções |
 
-## Publicando este repositório no GitHub
-
-O projeto já está com Git inicializado e commitado localmente. Para publicar:
-
-```bash
-gh repo create desafio-ia-generativa-poc --public --source=. --push
-```
-
-ou, sem a CLI do GitHub: crie um repositório vazio pela interface web e rode
-`git remote add origin <url> && git push -u origin main`.
-
 ## Ver também
 
 O documento técnico completo (`Dossie_Pesquisa_IA_Generativa.pdf`) traz a metodologia de pesquisa,
