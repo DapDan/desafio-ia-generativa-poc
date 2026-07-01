@@ -1,7 +1,7 @@
 # POC — Extração de Dados de Documentos com IA Generativa
 
 Prova de Conceito (Entregável 2) do Desafio Técnico — Pesquisador(a) em IA Generativa (P&D).
-**Candidato:** Danilo &nbsp;|&nbsp; **Data:** 1 de julho de 2026
+**Candidato:** Danilo &nbsp;|&nbsp; **Data:** 28 de junho de 2026
 
 Este repositório acompanha o **Dossiê de Pesquisa** (Entregável 1, PDF) e demonstra a técnica ali
 recomendada: **extração multimodal de documentos em passo único, com Structured Outputs**, em

@@ -27,9 +27,15 @@ import time
 from dataclasses import dataclass, asdict
 from pathlib import Path
 
+import os
 import pytesseract
 from PIL import Image
 from pdf2image import convert_from_path
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+os.environ['TESSDATA_PREFIX'] = r'C:\Program Files\Tesseract-OCR\tessdata'
+
+POPPLER_PATH = r'C:\poppler\Library\bin'
 
 
 @dataclass
@@ -48,13 +54,17 @@ def _ocr_imagem(caminho: Path) -> str:
 
 
 def _ocr_pdf(caminho: Path, pagina: int, dpi: int = 150) -> str:
-    """Rasteriza e faz OCR em UMA unica pagina (first_page=last_page=pagina),
-    para uma comparacao justa de tempo por pagina (evita pagar o custo de
-    rasterizar o PDF inteiro so para olhar 1 pagina)."""
-    imagens = convert_from_path(str(caminho), dpi=dpi, first_page=pagina, last_page=pagina)
+    """Rasteriza e faz OCR em UMA unica pagina..."""
+    # ADICIONE o argumento poppler_path aqui:
+    imagens = convert_from_path(
+        str(caminho), 
+        dpi=dpi, 
+        first_page=pagina, 
+        last_page=pagina,
+        poppler_path=POPPLER_PATH  # <-- NOVA LINHA AQUI
+    )
     texto = pytesseract.image_to_string(imagens[0], lang="eng") if imagens else ""
     return texto
-
 
 def rodar_baseline(diretorio_samples: str | Path = "samples") -> list[ResultadoOCR]:
     diretorio_samples = Path(diretorio_samples)
